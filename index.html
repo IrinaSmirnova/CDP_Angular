@@ -8,27 +8,27 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="uui-new-style">
-    <div ng-controller="MainCtrl">
-        <form>
-            <input type="text" ng-model="place" placeholder="Place">
-            <input type="text" ng-model="category" placeholder="Category">
-            <input type="submit" value="Search" ng-click="search()" class="search">
-        </form>
-        <ul class="results" ng-class="{'show-box': places.length}">
-            <li ng-repeat="place in places" class="anim" ng-animation>
-                {{place.name}}
-            </li>
-        </ul>
-        
-    </div>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/common/services/foursquare/foursquare.js"></script>
-    <script src="js/modules/main/mainController.js"></script>
+<div ng-controller="MainCtrl">
+    <form>
+        <input type="text" ng-model="place" placeholder="Place">
+        <input type="text" ng-model="category" placeholder="Category">
+        <input type="submit" value="Search" ng-click="search()" class="search">
+    </form>
+    <ul class="results" ng-show="places.length">
+        <li ng-repeat="place in places" class="anim" ng-animation>
+            {{place.name}}
+        </li>
+    </ul>
+
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/common/services/foursquare/foursquare.js"></script>
+<script src="js/modules/main/mainController.js"></script>
 </body>
 </html>
