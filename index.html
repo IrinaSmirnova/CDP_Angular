@@ -14,12 +14,12 @@
             <input type="text" ng-model="category" placeholder="Category">
             <input type="submit" value="Search" ng-click="search()" class="search">
         </form>
-        <ul class="results" ng-class="{'show-box': places.length}">
+        <ul class="results" ng-show="places.length">
             <li ng-repeat="place in places" class="anim" ng-animation>
                 {{place.name}}
             </li>
         </ul>
-        
+
     </div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
