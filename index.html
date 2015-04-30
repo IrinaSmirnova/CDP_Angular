@@ -3,32 +3,35 @@
 <head lang="en" >
     <meta charset="UTF-8">
     <title>Angular "FoursquareApp"</title>
+    <link rel="icon" href="images/icons/foursquare-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/uui-all.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="uui-new-style">
-    <div ng-controller="MainCtrl">
-        <form>
-            <input type="text" ng-model="place" placeholder="Place">
-            <input type="text" ng-model="category" placeholder="Category">
-            <input type="submit" value="Search" ng-click="search()" class="search">
-        </form>
-        <ul class="results" ng-show="places.length">
-            <li ng-repeat="place in places" class="anim" ng-animation>
-                {{place.name}}
-            </li>
-        </ul>
 
-    </div>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/common/services/foursquare/foursquare.js"></script>
-    <script src="js/modules/main/mainController.js"></script>
+<div ng-controller="MainCtrl">
+    <form class="mainSearch">
+        <input type="text" ng-model="place" placeholder="Place" class="place">
+        <input type="text" ng-model="category" placeholder="Category" class="category">
+        <input type="submit" value="Search" ng-click="search()" class="search">
+    </form>
+
+    <places ng-model="places" ng-if="places.length"></places>
+
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/common/services/foursquare/foursquare.js"></script>
+<script src="js/modules/main/mainController.js"></script>
+<script src="js/common/directives/places/places.directive.js"></script>
+<script src="js/common/directives/placeCard/placeCard.directive.js"></script>
+<script src="js/common/directives/placeStat/placeStat.directive.js"></script>
 </body>
 </html>
