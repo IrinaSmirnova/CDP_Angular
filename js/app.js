@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('foursquareApp', [
-        'ngResource', 'ngAnimate'
+        'ngResource', 'ngAnimate', 'ngSanitize'
     ]);
 
 })();

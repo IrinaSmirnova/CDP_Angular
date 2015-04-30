@@ -5,7 +5,6 @@
         .controller('MainCtrl', function ($scope, foursquareApiService) {
             //$scope.place = '';
 
-
             $scope.search = function () {
                 $scope.places = foursquareApiService.places({
                     near: $scope.place,

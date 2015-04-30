@@ -1,0 +1,9 @@
+<ul class="placeCard">
+    <li ng-repeat="category in place.categories">
+        <img ng-src="{{category.icon.prefix + 'bg_32' + category.icon.suffix}}" alt="category">
+        {{place.name}}
+    </li>
+</ul>
+<place-stat></place-stat>
+
+

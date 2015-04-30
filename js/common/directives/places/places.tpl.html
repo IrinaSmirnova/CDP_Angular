@@ -1,0 +1,13 @@
+<form>
+    <label for="places-filter">Filter:</label>
+    <input type="text" id="places-filter" ng-model="filterQuery">
+</form>
+<ul class="results">
+    <li ng-repeat="place in places | filter: filterPlaces" class="anim" ng-animation ng-click="showPlace($index)">
+        <place-card ng-model="place" ></place-card>
+    </li>
+</ul>
+<div class="selectedPlace" ng-if="selectedPlace.name">
+    <strong>{{selectedPlace.name}}</strong>
+    <p>{{selectedPlace.location.address}}</p>
+</div>
