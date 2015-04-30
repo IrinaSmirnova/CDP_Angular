@@ -1,0 +1,9 @@
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li ng-repeat="link in links" ui-sref-active="active">
+            <a ui-sref="{{link.sref}}">{{link.title}}</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="cont" ui-view>Hello!</div>

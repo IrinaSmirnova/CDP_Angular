@@ -1,0 +1,10 @@
+<div ng-controller="PlacesCtrl">
+    <form class="mainSearch">
+        <input type="text" ng-model="place" placeholder="Place" class="place">
+        <input type="text" ng-model="category" placeholder="Category" class="category">
+        <input type="submit" value="Search" ng-click="search()" class="search">
+    </form>
+
+    <places ng-model="places" ng-if="places.length"></places>
+
+</div>
