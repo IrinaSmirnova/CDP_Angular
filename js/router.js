@@ -1,10 +1,22 @@
-angular.module('foursquareApp')
+(function () {
+    'use strict';
+
+    angular.module('foursquareApp')
     .config (function ($stateProvider, $locationProvider, $urlRouterProvider) {
         //$locationProvider.html5Mode(true);
 
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+            .state('app', {
+                url: '/',
+                controller: 'appCtrl',
+                resolve: {
+                    token: function(tokenService) {
+                        return tokenService.requestToken();
+                    }
+                }
+            })
             .state('home', {
                 url: '/',
                 controller: 'MainCtrl',
@@ -34,4 +46,6 @@ angular.module('foursquareApp')
     })
     .config (function ($httpProvider) {
 
-});
+    $httpProvider.interceptors.push('tokenService');
+    });
+})();
